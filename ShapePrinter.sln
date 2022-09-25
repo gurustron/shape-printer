@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapePrinter", "ShapePrinter\ShapePrinter.csproj", "{7B4B4A76-997C-4307-A4D6-3869E368939B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapePrinter.Core", "ShapePrinter.Core\ShapePrinter.Core.csproj", "{245F1C28-EAE4-406F-9698-F82E1A447177}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{90C8B8EB-2DB4-4840-B302-7E356AE37F62}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B4B4A76-997C-4307-A4D6-3869E368939B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4B4A76-997C-4307-A4D6-3869E368939B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4B4A76-997C-4307-A4D6-3869E368939B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4B4A76-997C-4307-A4D6-3869E368939B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245F1C28-EAE4-406F-9698-F82E1A447177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{245F1C28-EAE4-406F-9698-F82E1A447177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{245F1C28-EAE4-406F-9698-F82E1A447177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{245F1C28-EAE4-406F-9698-F82E1A447177}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
