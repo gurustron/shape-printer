@@ -14,6 +14,7 @@ fileOption.AddAlias("-f");
 rootCommand.AddGlobalOption(fileOption);
 
 rootCommand.AddCommand(GetSquareCommand());
+rootCommand.AddCommand(GetRectangleCommand());
 
 await rootCommand.InvokeAsync(args);
 
@@ -30,6 +31,27 @@ Command GetSquareCommand()
         squareSideSizeOption, 
         fileOption);
     return squareCommand;
+}
+
+
+Command GetRectangleCommand()
+{
+    var command = new Command("rectangle", "Create a rectangle shape");
+    
+    var widthSizeOption = new Option<uint>("--width", "The width of rectangle") { IsRequired = true };
+    widthSizeOption.AddAlias("-w");
+    
+    var heightSizeOption = new Option<uint>("--width", "The width of rectangle") { IsRequired = true };
+    heightSizeOption.AddAlias("-w");
+    
+    command.AddOption(widthSizeOption);
+    command.AddOption(heightSizeOption);
+    command.SetHandler(
+        (width, height, fileName) => HandleShape(new Rectangle(width, height), fileName),
+        widthSizeOption,
+        heightSizeOption,
+        fileOption);
+    return command;
 }
 
 async Task HandleShape(IShape shape, FileInfo? fileInfo)
