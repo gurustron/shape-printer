@@ -12,13 +12,20 @@ public class SquareTests
     
     [Test]
     public void SquareSize2() => TestWithSize(2, 
-@"**
-**");
+@"*  *
+*  *");
     [Test]
     public void SquareSize3() => TestWithSize(3, 
-@"***
-* *
-***");
+@"*  *  *
+*     *
+*  *  *");
+    
+    [Test]
+    public void SquareSize4() => TestWithSize(4, 
+        @"*  *  *  *
+*        *
+*        *
+*  *  *  *");
     
     private static void TestWithSize(uint size, string expected)
     {

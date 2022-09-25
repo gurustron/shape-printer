@@ -5,6 +5,41 @@ using ShapePrinter.Core.Models;
 using ShapePrinter.Core.Models.Contract;
 using ShapePrinter.Printers;
 
+
+            
+        double thickness = 0.1;
+        ConsoleColor BorderColor = ConsoleColor.Yellow;
+        Console.ForegroundColor = BorderColor;
+        char symbol = '*';
+
+
+        for (int i = 1; i < 7; i++)
+        {
+            Console.WriteLine();
+            double radius = i;
+            double rIn =radius- thickness, rOut = radius + thickness;
+
+            for (double y = radius; y >= -radius; --y)
+            {
+                for (double x = -radius; x < rOut; x += 0.5)
+                {
+                    double value = x * x + y * y;
+                    if (value >= rIn * rIn && value <= rOut * rOut)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+
+        }
+        
+
+        Console.ReadKey();
 var rootCommand = new RootCommand();
 var fileOption = new Option<FileInfo?>("--file", "The file path to write shape to")
 {
@@ -41,8 +76,8 @@ Command GetRectangleCommand()
     var widthSizeOption = new Option<uint>("--width", "The width of rectangle") { IsRequired = true };
     widthSizeOption.AddAlias("-w");
     
-    var heightSizeOption = new Option<uint>("--width", "The width of rectangle") { IsRequired = true };
-    heightSizeOption.AddAlias("-w");
+    var heightSizeOption = new Option<uint>("--height", "The height of rectangle") { IsRequired = true };
+    heightSizeOption.AddAlias("-h");
     
     command.AddOption(widthSizeOption);
     command.AddOption(heightSizeOption);
