@@ -1,6 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.CommandLine;
+using ShapePrinter.Core.Models;
+using ShapePrinter.Core.Models.Contract;
+using ShapePrinter.Printers;
 
 var rootCommand = new RootCommand();
 var fileOption = new Option<FileInfo?>("--file", "The file path to write shape to")
@@ -22,14 +25,22 @@ Command GetSquareCommand()
     var squareSideSizeOption = new Option<uint>("--side", "The side size of the square") { IsRequired = true };
     squareSideSizeOption.AddAlias("-s");
     squareCommand.AddOption(squareSideSizeOption);
-    squareCommand.SetHandler((squareSide, fileName) =>
-    {
-        Console.WriteLine($"square: {squareSide}");
-        Console.WriteLine(fileName == null
-            ? "No file name provided"
-            : $"Writing to file: {fileName.FullName}");
-    }, squareSideSizeOption, fileOption);
+    squareCommand.SetHandler(
+        (squareSide, fileName) => HandleShape(new Square(squareSide), fileName),
+        squareSideSizeOption, 
+        fileOption);
     return squareCommand;
 }
+
+async Task HandleShape(IShape shape, FileInfo? fileInfo)
+{
+    IPrinter printer = fileInfo == null
+        ? new ConsolePrinter()
+        : new FilePrinter(fileInfo.FullName);
+
+    await printer.PrintAsync(shape);
+}
+
+
 
 
