@@ -27,4 +27,6 @@ public sealed record Rectangle(uint Width, uint Height) : IShape
         
         yield return GetFilledString(Width);
     }
+    
+    public ValidationResult Validate() => ValidationResult.Success;
 }

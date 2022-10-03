@@ -16,6 +16,8 @@ public sealed record Circle(uint Radius) : IShape
         return VariantOne();
     }
 
+    public ValidationResult Validate() => ValidationResult.Success;
+
     private IEnumerable<string> VariantOne()
     {
         var diameter = Radius * 2;

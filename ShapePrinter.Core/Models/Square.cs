@@ -27,4 +27,6 @@ public sealed record Square(uint Side) : IShape
 
         yield return GetFilledString(Side);
     }
+
+    public ValidationResult Validate() => ValidationResult.Success;
 }
