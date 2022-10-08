@@ -6,13 +6,22 @@ using ShapePrinter.Core.Models.Contract;
 using ShapePrinter.Printers;
 
 ConsolePrinter consolePrinter = new ConsolePrinter();
-for (uint i = 1 ; i < 7; i++)
-{
-    await consolePrinter.PrintAsync(new Circle(i));
+// for (uint i = 1 ; i < 7; i++)
+// {
+//     await consolePrinter.PrintAsync(new Circle(i));
+//
+//     Console.WriteLine(new string('-', 20));
+// }
+//             
+// await consolePrinter.PrintAsync(new Triangle(7, 3, 6));
+// await consolePrinter.PrintAsync(new Triangle(7, 5, 6));
+// await consolePrinter.PrintAsync(new Triangle(3, 5, 7));
+// await consolePrinter.PrintAsync(new Triangle(3, 7, 5));
+// await consolePrinter.PrintAsync(new Triangle(3, 3, 4.24));
+//
+// await consolePrinter.PrintAsync(new Triangle(3, 4.24, 3));
+await consolePrinter.PrintAsync(new Triangle(7.81, 5, 6));
 
-    Console.WriteLine(new string('-', 20));
-}
-            
         // double thickness = 0.4;
         // ConsoleColor BorderColor = ConsoleColor.Yellow;
         // Console.ForegroundColor = BorderColor;

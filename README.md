@@ -1,6 +1,6 @@
 # Shape Printer
 
-Using C# language create a console application that can print geometric shapes to the screen or to the file. Shape to print should be chosen by user along with shape dimensions. 
+Using C# create a console application that can print geometric shapes to the screen or to the file. Shape to print should be chosen by user along with shape dimensions. 
 
 User can choose one of the shape: triangle, circle, square or rectangle.
 User must provide dimensions for shape:
@@ -8,3 +8,9 @@ User must provide dimensions for shape:
 * 3 lengths of vertices for triangle
 * side length for square
 * 2 sides lengths for rectangle
+
+## TODO:
+
+- Validation tests
+- Rest of the shape tests
+- Integration tests

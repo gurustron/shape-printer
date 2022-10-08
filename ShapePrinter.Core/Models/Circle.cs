@@ -31,17 +31,12 @@ public sealed record Circle(uint Radius) : IShape
             var x2 = (diameter - sqrt) / 2;
             var minInt = (int)Math.Round(Math.Min(x1, x2));
             var maxInt = (int)Math.Round(Math.Max(x1, x2));
-            for (int j = 0; j <= diameter; j++)
+            for (int j = 0; j < maxInt; j++)
             {
-                if (j == maxInt || j == minInt)
-                {
-                    line.Append("* ");
-                }
-                else
-                {
-                    line.Append("  ");
-                }
+                line.Append(j == minInt ? "* " : "  ");
             }
+
+            line.Append("*");
 
             yield return line.ToString().TrimEnd();  // remove trailing spaces on builder 
         }
